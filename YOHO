@@ -1,0 +1,31 @@
+// Program to create a simple calculator using switch case
+#include <stdio.h>
+int main()
+{
+    char op; // variable to store the operator
+    double num1, num2, result; // variables to store the operands and the result
+    printf("Enter an operator (+, -, *, /): "); // prompt the user to enter an operator
+    scanf("%c", &op); // read the operator from the user
+    printf("Enter two operands: "); // prompt the user to enter two operands
+    scanf("%lf %lf", &num1, &num2); // read the operands from the user
+    switch(op) // switch on the operator
+    {
+        case '+': // if the operator is +
+            result = num1 + num2; // add the operands and store the result
+            break; // end the case
+        case '-': // if the operator is -
+            result = num1 - num2; // subtract the operands and store the result
+            break; // end the case
+        case '*': // if the operator is *
+            result = num1 * num2; // multiply the operands and store the result
+            break; // end the case
+        case '/': // if the operator is /
+            result = num1 / num2; // divide the operands and store the result
+            break; // end the case
+        default: // if the operator is not +, -, *, or /
+            printf("Error! Invalid operator\n"); // print an error message
+            return 0; // exit the program
+    }
+    printf("%.2lf %c %.2lf = %.2lf\n", num1, op, num2, result); // print the result
+    return 0; // return 0 to indicate successful termination
+}
